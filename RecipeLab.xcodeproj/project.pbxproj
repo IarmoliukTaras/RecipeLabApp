@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		9D0F11081F20E73100219A9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F11071F20E73100219A9A /* AppDelegate.swift */; };
-		9D0F110A1F20E73100219A9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F11091F20E73100219A9A /* ViewController.swift */; };
+		9D0F110A1F20E73100219A9A /* RecipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F11091F20E73100219A9A /* RecipeVC.swift */; };
 		9D0F110D1F20E73100219A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F110B1F20E73100219A9A /* Main.storyboard */; };
 		9D0F11101F20E73100219A9A /* RecipeLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F110E1F20E73100219A9A /* RecipeLab.xcdatamodeld */; };
 		9D0F11121F20E73100219A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F11111F20E73100219A9A /* Assets.xcassets */; };
 		9D0F11151F20E73100219A9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F11131F20E73100219A9A /* LaunchScreen.storyboard */; };
+		9D752D5B1F21420F00CF2ECC /* RecipeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */; };
+		9D752D5D1F21430000CF2ECC /* PupppyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5C1F21430000CF2ECC /* PupppyService.swift */; };
+		9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5E1F2147E400CF2ECC /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D0F11041F20E73100219A9A /* RecipeLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0F11071F20E73100219A9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D0F11091F20E73100219A9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D0F11091F20E73100219A9A /* RecipeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVC.swift; sourceTree = "<group>"; };
 		9D0F110C1F20E73100219A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D0F110F1F20E73100219A9A /* RecipeLab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecipeLab.xcdatamodel; sourceTree = "<group>"; };
 		9D0F11111F20E73100219A9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D0F11141F20E73100219A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D0F11161F20E73100219A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeImageView.swift; sourceTree = "<group>"; };
+		9D752D5C1F21430000CF2ECC /* PupppyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PupppyService.swift; sourceTree = "<group>"; };
+		9D752D5E1F2147E400CF2ECC /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		9D0F11061F20E73100219A9A /* RecipeLab */ = {
 			isa = PBXGroup;
 			children = (
+				9D0F11231F2139D900219A9A /* Service */,
+				9D0F11221F2139D200219A9A /* Model */,
+				9D0F11211F2139CA00219A9A /* Controller */,
+				9D0F11201F2139BA00219A9A /* View */,
 				9D0F11071F20E73100219A9A /* AppDelegate.swift */,
-				9D0F11091F20E73100219A9A /* ViewController.swift */,
-				9D0F110B1F20E73100219A9A /* Main.storyboard */,
 				9D0F11111F20E73100219A9A /* Assets.xcassets */,
-				9D0F11131F20E73100219A9A /* LaunchScreen.storyboard */,
 				9D0F11161F20E73100219A9A /* Info.plist */,
 				9D0F110E1F20E73100219A9A /* RecipeLab.xcdatamodeld */,
 			);
 			path = RecipeLab;
+			sourceTree = "<group>";
+		};
+		9D0F11201F2139BA00219A9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D0F110B1F20E73100219A9A /* Main.storyboard */,
+				9D0F11131F20E73100219A9A /* LaunchScreen.storyboard */,
+				9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9D0F11211F2139CA00219A9A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9D0F11091F20E73100219A9A /* RecipeVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9D0F11221F2139D200219A9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D752D5E1F2147E400CF2ECC /* Recipe.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9D0F11231F2139D900219A9A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9D752D5C1F21430000CF2ECC /* PupppyService.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D0F110A1F20E73100219A9A /* ViewController.swift in Sources */,
+				9D752D5D1F21430000CF2ECC /* PupppyService.swift in Sources */,
+				9D0F110A1F20E73100219A9A /* RecipeVC.swift in Sources */,
 				9D0F11101F20E73100219A9A /* RecipeLab.xcdatamodeld in Sources */,
+				9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */,
+				9D752D5B1F21420F00CF2ECC /* RecipeImageView.swift in Sources */,
 				9D0F11081F20E73100219A9A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +350,7 @@
 				9D0F111B1F20E73100219A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
