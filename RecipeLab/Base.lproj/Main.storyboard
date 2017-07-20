@@ -48,7 +48,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="150" id="3wr-IA-xKc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="150" id="3wr-IA-xKc" customClass="RecipeTableViewCell" customModule="RecipeLab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3wr-IA-xKc" id="rtY-ts-TYJ">
@@ -71,37 +71,42 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-SU-ha2">
-                                                    <rect key="frame" x="128" y="18" width="229" height="30"/>
+                                                    <rect key="frame" x="128" y="18" width="234" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Smw-XM-skn"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-FO-PAJ">
-                                                    <rect key="frame" x="126" y="58" width="231" height="79.5"/>
+                                                    <rect key="frame" x="126" y="48" width="236" height="94.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Scy-VG-7Kt" secondAttribute="trailing" id="3OP-3X-KXZ"/>
                                                 <constraint firstItem="Scy-VG-7Kt" firstAttribute="leading" secondItem="rtY-ts-TYJ" secondAttribute="leading" id="4Si-Fj-Ivf"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DNM-SU-ha2" secondAttribute="trailing" constant="10" id="5t9-FO-Klh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DNM-SU-ha2" secondAttribute="trailing" constant="5" id="5t9-FO-Klh"/>
                                                 <constraint firstItem="DNM-SU-ha2" firstAttribute="leading" secondItem="4GN-wY-aRJ" secondAttribute="trailing" constant="10" id="NFj-NB-6Fi"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="u4e-FO-PAJ" secondAttribute="trailing" constant="10" id="OiY-uf-7WV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="u4e-FO-PAJ" secondAttribute="trailing" constant="5" id="OiY-uf-7WV"/>
                                                 <constraint firstItem="4GN-wY-aRJ" firstAttribute="leading" secondItem="rtY-ts-TYJ" secondAttribute="leadingMargin" constant="10" id="VWH-B4-Sre"/>
-                                                <constraint firstItem="Scy-VG-7Kt" firstAttribute="top" secondItem="u4e-FO-PAJ" secondAttribute="bottom" constant="10" id="cGx-qU-dWs"/>
+                                                <constraint firstItem="Scy-VG-7Kt" firstAttribute="top" secondItem="u4e-FO-PAJ" secondAttribute="bottom" constant="5" id="cGx-qU-dWs"/>
                                                 <constraint firstAttribute="bottom" secondItem="Scy-VG-7Kt" secondAttribute="bottom" id="gdH-AT-wxW"/>
                                                 <constraint firstItem="4GN-wY-aRJ" firstAttribute="centerY" secondItem="rtY-ts-TYJ" secondAttribute="centerY" id="sYH-W4-nhN"/>
                                                 <constraint firstItem="DNM-SU-ha2" firstAttribute="top" secondItem="rtY-ts-TYJ" secondAttribute="topMargin" constant="10" id="vNv-bE-1nF"/>
-                                                <constraint firstItem="u4e-FO-PAJ" firstAttribute="top" secondItem="DNM-SU-ha2" secondAttribute="bottom" constant="10" id="zLC-BL-hxB"/>
+                                                <constraint firstItem="u4e-FO-PAJ" firstAttribute="top" secondItem="DNM-SU-ha2" secondAttribute="bottom" id="zLC-BL-hxB"/>
                                                 <constraint firstItem="u4e-FO-PAJ" firstAttribute="leading" secondItem="4GN-wY-aRJ" secondAttribute="trailing" constant="8" id="zdb-MW-kiU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientsTextView" destination="u4e-FO-PAJ" id="Vpl-1T-iGd"/>
+                                            <outlet property="recipeImage" destination="4GN-wY-aRJ" id="tLg-LA-8v2"/>
+                                            <outlet property="titleLabel" destination="DNM-SU-ha2" id="7pm-4G-owV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

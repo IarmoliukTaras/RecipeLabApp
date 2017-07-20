@@ -16,6 +16,8 @@
 		9D752D5B1F21420F00CF2ECC /* RecipeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */; };
 		9D752D5D1F21430000CF2ECC /* PupppyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5C1F21430000CF2ECC /* PupppyService.swift */; };
 		9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5E1F2147E400CF2ECC /* Recipe.swift */; };
+		9D752D611F214D6A00CF2ECC /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D601F214D6A00CF2ECC /* RecipeTableViewCell.swift */; };
+		9D752D631F21504800CF2ECC /* RecipeVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D621F21504800CF2ECC /* RecipeVC+tableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeImageView.swift; sourceTree = "<group>"; };
 		9D752D5C1F21430000CF2ECC /* PupppyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PupppyService.swift; sourceTree = "<group>"; };
 		9D752D5E1F2147E400CF2ECC /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		9D752D601F214D6A00CF2ECC /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		9D752D621F21504800CF2ECC /* RecipeVC+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeVC+tableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				9D0F110B1F20E73100219A9A /* Main.storyboard */,
 				9D0F11131F20E73100219A9A /* LaunchScreen.storyboard */,
 				9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */,
+				9D752D601F214D6A00CF2ECC /* RecipeTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				9D0F11091F20E73100219A9A /* RecipeVC.swift */,
+				9D752D621F21504800CF2ECC /* RecipeVC+tableView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			files = (
 				9D752D5D1F21430000CF2ECC /* PupppyService.swift in Sources */,
 				9D0F110A1F20E73100219A9A /* RecipeVC.swift in Sources */,
+				9D752D631F21504800CF2ECC /* RecipeVC+tableView.swift in Sources */,
 				9D0F11101F20E73100219A9A /* RecipeLab.xcdatamodeld in Sources */,
+				9D752D611F214D6A00CF2ECC /* RecipeTableViewCell.swift in Sources */,
 				9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */,
 				9D752D5B1F21420F00CF2ECC /* RecipeImageView.swift in Sources */,
 				9D0F11081F20E73100219A9A /* AppDelegate.swift in Sources */,
