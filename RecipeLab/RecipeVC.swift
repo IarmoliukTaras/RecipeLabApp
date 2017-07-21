@@ -24,6 +24,7 @@ class RecipeVC: UIViewController {
             
             for recipe in recipes {
                 let aRecipe = Recipe(dictionary: recipe)
+                DataService.sharedInstance.addRecipe(aRecipe)
                 self.recipes.append(aRecipe)
             }
             
