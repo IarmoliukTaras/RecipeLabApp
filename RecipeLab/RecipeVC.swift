@@ -12,6 +12,9 @@ class RecipeVC: UIViewController {
     
     @IBOutlet weak var recipeTableView: UITableView!
     
+    let defaultUrl = "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
+    let searchUrl = "http://www.recipepuppy.com/api/?q="
+    
     var recipes = [Recipe]()
     
     override func viewDidLoad() {
@@ -19,20 +22,20 @@ class RecipeVC: UIViewController {
         recipeTableView.estimatedRowHeight = 120
         recipeTableView.rowHeight = UITableViewAutomaticDimension
         
-        PupppyService.sharedInstance.getRecipes(url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3") { (recipes) in
-            self.recipes.removeAll()
-            
-            for recipe in recipes {
-                let aRecipe = Recipe(dictionary: recipe)
-                DataService.sharedInstance.addRecipe(aRecipe)
-                self.recipes.append(aRecipe)
-            }
-            
+        PupppyService.sharedInstance.getRecipes(url: defaultUrl) { (recipes) in
+            DataService.sharedInstance.addRecipes(recipes)
+        }
+        
+        DataService.sharedInstance.getRecipes { (recipes) in
+            self.recipes = recipes
             DispatchQueue.main.async {
                 self.recipeTableView.reloadData()
             }
         }
-        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

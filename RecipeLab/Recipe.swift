@@ -15,9 +15,9 @@ struct Recipe {
     let pageUrl: String
     
     init(dictionary: [String: Any]) {
-        self.title = dictionary["title"] as? String ?? ""
-        self.ingredients = dictionary["ingredients"] as? String ?? ""
-        self.pageUrl = dictionary["href"] as? String ?? ""
-        self.imageUrl = dictionary["thumbnail"] as? String ?? ""
+        self.title = dictionary["title"] as? String ?? " "
+        self.ingredients = dictionary["ingredients"] as? String ?? " "
+        self.pageUrl = dictionary["href"] as? String ?? " "
+        self.imageUrl = dictionary["thumbnail"] as? String ?? " "
     }
 }

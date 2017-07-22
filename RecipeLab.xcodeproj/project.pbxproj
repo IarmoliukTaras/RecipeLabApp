@@ -21,6 +21,8 @@
 		9D752D631F21504800CF2ECC /* RecipeVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D621F21504800CF2ECC /* RecipeVC+tableView.swift */; };
 		9DB7F8AE1F22B72100D3C89A /* DataServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F8AD1F22B72100D3C89A /* DataServise.swift */; };
 		9DB7F8B21F22BAA600D3C89A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7F8B11F22BAA600D3C89A /* GoogleService-Info.plist */; };
+		9DB7F8B51F239D1800D3C89A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F8B41F239D1800D3C89A /* Extensions.swift */; };
+		9DB7F8B71F23A68800D3C89A /* RecipeVC+searchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F8B61F23A68800D3C89A /* RecipeVC+searchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		9D752D621F21504800CF2ECC /* RecipeVC+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeVC+tableView.swift"; sourceTree = "<group>"; };
 		9DB7F8AD1F22B72100D3C89A /* DataServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataServise.swift; sourceTree = "<group>"; };
 		9DB7F8B11F22BAA600D3C89A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9DB7F8B41F239D1800D3C89A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9DB7F8B61F23A68800D3C89A /* RecipeVC+searchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeVC+searchBar.swift"; sourceTree = "<group>"; };
 		FE5A7A9A7589BC149061F84E /* Pods-RecipeLab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeLab.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeLab/Pods-RecipeLab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,7 @@
 		9D0F11061F20E73100219A9A /* RecipeLab */ = {
 			isa = PBXGroup;
 			children = (
+				9DB7F8B31F239CE700D3C89A /* Helper */,
 				9D0F11231F2139D900219A9A /* Service */,
 				9D0F11221F2139D200219A9A /* Model */,
 				9D0F11211F2139CA00219A9A /* Controller */,
@@ -123,6 +128,7 @@
 			children = (
 				9D0F11091F20E73100219A9A /* RecipeVC.swift */,
 				9D752D621F21504800CF2ECC /* RecipeVC+tableView.swift */,
+				9DB7F8B61F23A68800D3C89A /* RecipeVC+searchBar.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 				9DB7F8AD1F22B72100D3C89A /* DataServise.swift */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		9DB7F8B31F239CE700D3C89A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9DB7F8B41F239D1800D3C89A /* Extensions.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,9 +285,11 @@
 			files = (
 				9D752D5D1F21430000CF2ECC /* PupppyService.swift in Sources */,
 				9DB7F8AE1F22B72100D3C89A /* DataServise.swift in Sources */,
+				9DB7F8B71F23A68800D3C89A /* RecipeVC+searchBar.swift in Sources */,
 				9D0F110A1F20E73100219A9A /* RecipeVC.swift in Sources */,
 				9D752D631F21504800CF2ECC /* RecipeVC+tableView.swift in Sources */,
 				9D0F11101F20E73100219A9A /* RecipeLab.xcdatamodeld in Sources */,
+				9DB7F8B51F239D1800D3C89A /* Extensions.swift in Sources */,
 				9D752D611F214D6A00CF2ECC /* RecipeTableViewCell.swift in Sources */,
 				9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */,
 				9D752D5B1F21420F00CF2ECC /* RecipeImageView.swift in Sources */,

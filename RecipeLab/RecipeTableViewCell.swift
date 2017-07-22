@@ -22,6 +22,7 @@ class RecipeTableViewCell: UITableViewCell {
     func configCell(recipe: Recipe) {
         titleLabel.text = recipe.title
         ingredientsTextView.text = recipe.ingredients
+        recipeImage.loadUsingCacheWith(url: recipe.imageUrl)
     }
 
 }

@@ -6,51 +6,41 @@
 //  Copyright © 2017 taras team. All rights reserved.
 //
 
+import Firebase
 import FirebaseDatabase
 
 class DataService {
     
     static let sharedInstance = DataService()
-    
     private var _RECIPE_REF = FIRDatabase.database().reference().child("recipe")
     
     var RECIPE_REF: FIRDatabaseReference {
         return _RECIPE_REF
     }
     
-    func addRecipe(_ recipe: Recipe) {
-        let values = ["ingredients": recipe.ingredients,
-                      "imageUrl": recipe.imageUrl,
-                      "pageUrl": recipe.pageUrl]
-        
-        RECIPE_REF.child(recipe.title).setValue(values)
-        
+    func addRecipes(_ recipes: [Recipe]) {
+        var values = [String: String]()
+        for recipe in recipes {
+            values = ["ingredients": recipe.ingredients,
+                          "thumbnail": recipe.imageUrl,
+                          "href": recipe.pageUrl]
+            RECIPE_REF.child(recipe.title.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)).setValue(values)
+        }
     }
     
-//    
-//    var CURRENT_USER_REF: FIRDatabaseReference {
-//        let uid = KeychainWrapper.standard.string(forKey: "uid")
-//        let user = USER_REF.child(uid!)
-//        return user
-//    }
-//    
-//    var CURRENT_USER_CITIES_REF: FIRDatabaseReference {
-//        return CURRENT_USER_REF.child("cities")
-//    }
-//    
-//    func addCity(cityName: String) {
-//        CURRENT_USER_REF.child("cities").updateChildValues([cityName: cityName])
-//    }
-//    
-//    func observeCities(completed: @escaping ([String]) -> ()) {
-//        DataService.dataService.CURRENT_USER_CITIES_REF.observe(.value, with: {(snapshot) in
-//            guard let dataSnapshot = snapshot.children.allObjects as? [FIRDataSnapshot] else { return }
-//            completed(dataSnapshot.map{$0.key})
-//        })
-//    }
-//    
-//    func removeCity(name: String) {
-//        DataService.dataService.CURRENT_USER_CITIES_REF.child(name).removeValue()
-//    }
-//    
+    func getRecipes(completed: @escaping ([Recipe]) -> ()) {
+        RECIPE_REF.queryOrderedByValue().observe(FIRDataEventType.value, with: {(snapshot) in
+            var recipes = [Recipe]()
+            if snapshot.childrenCount > 0 {
+                for recipe in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                    if var recipeObject = recipe.value as? [String : String] {
+                        recipeObject.updateValue(recipe.key.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "title")
+                        let recipe = Recipe(dictionary: recipeObject)
+                        recipes.append(recipe)
+                    }
+                }
+            }
+            completed(recipes)
+        })
+    }
 }

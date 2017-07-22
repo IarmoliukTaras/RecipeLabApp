@@ -10,7 +10,6 @@ import UIKit
 
 extension RecipeVC: UITableViewDataSource, UITableViewDelegate {
     
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -25,6 +24,16 @@ extension RecipeVC: UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             return RecipeTableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let recipeUrl = URL(string: recipes[indexPath.row].pageUrl) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(recipeUrl)
+            } else {
+                UIApplication.shared.openURL(recipeUrl)
+            }
         }
     }
 }
