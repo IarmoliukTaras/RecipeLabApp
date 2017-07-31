@@ -14,6 +14,9 @@
 		9D0F11101F20E73100219A9A /* RecipeLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F110E1F20E73100219A9A /* RecipeLab.xcdatamodeld */; };
 		9D0F11121F20E73100219A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F11111F20E73100219A9A /* Assets.xcassets */; };
 		9D0F11151F20E73100219A9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F11131F20E73100219A9A /* LaunchScreen.storyboard */; };
+		9D6B0D791F2E6999004D92C9 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B0D781F2E6999004D92C9 /* Recipe+CoreDataProperties.swift */; };
+		9D7287DE1F2DD65900A6553D /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7287DC1F2DD65900A6553D /* Recipe+CoreDataClass.swift */; };
+		9D7287E11F2DD68800A6553D /* PresistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7287E01F2DD68800A6553D /* PresistenceService.swift */; };
 		9D752D5B1F21420F00CF2ECC /* RecipeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */; };
 		9D752D5D1F21430000CF2ECC /* PupppyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5C1F21430000CF2ECC /* PupppyService.swift */; };
 		9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D752D5E1F2147E400CF2ECC /* Recipe.swift */; };
@@ -36,6 +39,9 @@
 		9D0F11111F20E73100219A9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D0F11141F20E73100219A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D0F11161F20E73100219A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D6B0D781F2E6999004D92C9 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9D7287DC1F2DD65900A6553D /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9D7287E01F2DD68800A6553D /* PresistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistenceService.swift; sourceTree = "<group>"; };
 		9D752D5A1F21420F00CF2ECC /* RecipeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeImageView.swift; sourceTree = "<group>"; };
 		9D752D5C1F21430000CF2ECC /* PupppyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PupppyService.swift; sourceTree = "<group>"; };
 		9D752D5E1F2147E400CF2ECC /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 		9D0F11221F2139D200219A9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9D7287DC1F2DD65900A6553D /* Recipe+CoreDataClass.swift */,
+				9D6B0D781F2E6999004D92C9 /* Recipe+CoreDataProperties.swift */,
 				9D752D5E1F2147E400CF2ECC /* Recipe.swift */,
 			);
 			name = Model;
@@ -146,6 +154,7 @@
 			children = (
 				9D752D5C1F21430000CF2ECC /* PupppyService.swift */,
 				9DB7F8AD1F22B72100D3C89A /* DataServise.swift */,
+				9D7287E01F2DD68800A6553D /* PresistenceService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -288,7 +297,10 @@
 				9DB7F8B71F23A68800D3C89A /* RecipeVC+searchBar.swift in Sources */,
 				9D0F110A1F20E73100219A9A /* RecipeVC.swift in Sources */,
 				9D752D631F21504800CF2ECC /* RecipeVC+tableView.swift in Sources */,
+				9D7287DE1F2DD65900A6553D /* Recipe+CoreDataClass.swift in Sources */,
 				9D0F11101F20E73100219A9A /* RecipeLab.xcdatamodeld in Sources */,
+				9D6B0D791F2E6999004D92C9 /* Recipe+CoreDataProperties.swift in Sources */,
+				9D7287E11F2DD68800A6553D /* PresistenceService.swift in Sources */,
 				9DB7F8B51F239D1800D3C89A /* Extensions.swift in Sources */,
 				9D752D611F214D6A00CF2ECC /* RecipeTableViewCell.swift in Sources */,
 				9D752D5F1F2147E400CF2ECC /* Recipe.swift in Sources */,

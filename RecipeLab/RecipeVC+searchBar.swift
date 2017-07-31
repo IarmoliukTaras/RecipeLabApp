@@ -11,8 +11,12 @@ import UIKit
 extension RecipeVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let text = searchBar.text!.replacingOccurrences(of: " ", with: "%20")
-        PupppyService.sharedInstance.getRecipes(url: searchUrl + text, completed: { (recipes) in
+        guard let searchWord = searchBar.text?.replacingOccurrences(of: " ", with: "%20").lowercased() else { return }
+        
+        let recipes = PresistenceService.getRecipeBy(searchWord: searchWord)
+        self.reloadRecipeTableView(recipes: recipes)
+        
+        PupppyService.sharedInstance.getRecipes(searchWord: searchWord, completed: { (recipes) in
             DispatchQueue.main.async {
                 self.recipes = recipes
                 self.recipeTableView.reloadData()
@@ -22,13 +26,8 @@ extension RecipeVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            DataService.sharedInstance.getRecipes(completed: { (recipes) in
-                self.recipes = recipes
-                DispatchQueue.main.async {
-                    self.recipes = recipes
-                    self.recipeTableView.reloadData()
-                }
-            })
+            let recipes = PresistenceService.getRecipes()
+            self.reloadRecipeTableView(recipes: recipes)
         }
     }
 }

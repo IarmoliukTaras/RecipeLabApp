@@ -12,8 +12,8 @@ class RecipeVC: UIViewController {
     
     @IBOutlet weak var recipeTableView: UITableView!
     
-    let defaultUrl = "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
-    let searchUrl = "http://www.recipepuppy.com/api/?q="
+//    let defaultUrl = "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
+//    let searchUrl = "http://www.recipepuppy.com/api/?q="
     
     var recipes = [Recipe]()
     
@@ -22,15 +22,24 @@ class RecipeVC: UIViewController {
         recipeTableView.estimatedRowHeight = 120
         recipeTableView.rowHeight = UITableViewAutomaticDimension
         
-        PupppyService.sharedInstance.getRecipes(url: defaultUrl) { (recipes) in
+        let recipes = PresistenceService.getRecipes()
+        self.reloadRecipeTableView(recipes: recipes)
+        
+        PupppyService.sharedInstance.getRecipes() { (recipes) in
             DataService.sharedInstance.addRecipes(recipes)
         }
         
         DataService.sharedInstance.getRecipes { (recipes) in
-            self.recipes = recipes
             DispatchQueue.main.async {
-                self.recipeTableView.reloadData()
+                self.reloadRecipeTableView(recipes: recipes)
             }
+        }
+    }
+    
+    func reloadRecipeTableView(recipes: [Recipe]) {
+        if recipes.count > 0 {
+            self.recipes = recipes
+            self.recipeTableView.reloadData()
         }
     }
     

@@ -12,7 +12,12 @@ class PupppyService {
     
     static let sharedInstance = PupppyService()
     
-    func getRecipes(url: String, completed: @escaping ([Recipe]) -> ()) {
+    func getRecipes(searchWord: String = "default", completed: @escaping ([Recipe]) -> ()) {
+        var url = "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
+        if searchWord != "default"{
+            url = "http://www.recipepuppy.com/api/?q=" + searchWord
+        }
+        
         guard let recipesUrl = URL(string: url) else { return }
         var recipes = [Recipe]()
         URLSession.shared.dataTask(with: recipesUrl) { (data, response, error) in
@@ -26,8 +31,12 @@ class PupppyService {
                 
                 guard let dictionary = json as? [String: Any] else { return }
                 guard let results = dictionary["results"] as? [[String: Any]] else { return }
-                for result in results {
-                    let recipe = Recipe(dictionary: result)
+                PresistenceService.deleteRecipesBy(searchWord: searchWord)
+                for var result in results {
+                    result.updateValue(searchWord, forKey: "searchWord")
+                    let recipe = Recipe(context: PresistenceService.context)
+                    recipe.setAttributes(dictionary: result)
+                    PresistenceService.saveContext()
                     recipes.append(recipe)
                 }
                 completed(recipes)

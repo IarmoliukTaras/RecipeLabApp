@@ -21,10 +21,10 @@ class DataService {
     func addRecipes(_ recipes: [Recipe]) {
         var values = [String: String]()
         for recipe in recipes {
-            values = ["ingredients": recipe.ingredients,
-                          "thumbnail": recipe.imageUrl,
-                          "href": recipe.pageUrl]
-            RECIPE_REF.child(recipe.title.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)).setValue(values)
+            values = ["ingredients": recipe.ingredients!,
+                          "thumbnail": recipe.thumbnail!,
+                          "href": recipe.href!]
+            RECIPE_REF.child(recipe.title!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)).setValue(values)
         }
     }
     
@@ -32,10 +32,11 @@ class DataService {
         RECIPE_REF.queryOrderedByValue().observe(FIRDataEventType.value, with: {(snapshot) in
             var recipes = [Recipe]()
             if snapshot.childrenCount > 0 {
-                for recipe in snapshot.children.allObjects as! [FIRDataSnapshot] {
-                    if var recipeObject = recipe.value as? [String : String] {
-                        recipeObject.updateValue(recipe.key.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "title")
-                        let recipe = Recipe(dictionary: recipeObject)
+                for object in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                    if var recipeDict = object.value as? [String : String] {
+                        recipeDict.updateValue(object.key.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), forKey: "title")
+                        let recipe = Recipe(context: PresistenceService.context)
+                        recipe.setAttributes(dictionary: recipeDict)
                         recipes.append(recipe)
                     }
                 }

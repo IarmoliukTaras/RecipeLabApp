@@ -28,7 +28,7 @@ extension RecipeVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let recipeUrl = URL(string: recipes[indexPath.row].pageUrl) {
+        if let recipeUrl = URL(string: recipes[indexPath.row].href!) {
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(recipeUrl)
             } else {
