@@ -18,8 +18,7 @@ extension RecipeVC: UISearchBarDelegate {
         
         PupppyService.sharedInstance.getRecipes(searchWord: searchWord, completed: { (recipes) in
             DispatchQueue.main.async {
-                self.recipes = recipes
-                self.recipeTableView.reloadData()
+                self.reloadRecipeTableView(recipes: recipes)
             }
         })
     }

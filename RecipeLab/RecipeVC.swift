@@ -12,14 +12,11 @@ class RecipeVC: UIViewController {
     
     @IBOutlet weak var recipeTableView: UITableView!
     
-//    let defaultUrl = "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
-//    let searchUrl = "http://www.recipepuppy.com/api/?q="
-    
     var recipes = [Recipe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeTableView.estimatedRowHeight = 120
+        recipeTableView.estimatedRowHeight = 150
         recipeTableView.rowHeight = UITableViewAutomaticDimension
         
         let recipes = PresistenceService.getRecipes()

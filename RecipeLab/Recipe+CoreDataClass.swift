@@ -18,6 +18,9 @@ public class Recipe: NSManagedObject {
         self.ingredients = dictionary["ingredients"] as? String ?? " "
         self.href = dictionary["href"] as? String ?? " "
         self.thumbnail = dictionary["thumbnail"] as? String ?? " "
+        PupppyService.sharedInstance.downloadImage(urlStr: self.thumbnail!) { (data) in
+            self.image = data as NSData
+        }
         self.searchWord = dictionary["searchWord"] as? String ?? " "
     }
 }
